@@ -6,6 +6,11 @@
 
 // --------------------1) Create a function that takes in an array of objects and returns an array with a sentence about each person with their name capitalized.
 
+// Create function
+// param = array
+// iterate - map through each item
+// capitalize using splt, uppercase, splice and join
+
 // a) Create a test with an expect statement using the variable provided.
 //describe function stryMkr
 describe("function test got stryMkr", () => {
@@ -38,12 +43,16 @@ var people = [
 // b) Create the function that makes the test pass.
 //create function that takes in array as input
 const stryMkr = (arr) => {
-  // map through array
-  return arr.map(obj =>
+  // map through array to access each point
+  return arr.map(obj => { 
+
+    //So this section is where I was at on Friday. I talked to Rebecca about it after I talked to you and it made sense. This is basically what I did except I had a return line capName.join(" ") for .join instead of attaching it to the end of capName code. This is exactly how we did it in the review today and when I run this it still fails.
+    let capName = obj.name.split(" ").map(value => value[0].toUppercase() + obj.slice(1)).join(" ")  // I use the space inbetween and the , to get each index to be a word and not seperated by a comma. 
+    return `My name is ${capName} I am ${obj.occupation} `
+  })
     // .toUppercase to capitalize data in object name
-  `My name is ${obj.name.toUpperCase()}
-  I am ${obj.occupation} `)
-}
+ 
+} 
  //Return name capitalized.
 
 //  I split this, used charAt, splice, and slice.... all with no dice. 
@@ -85,6 +94,13 @@ const remainsByTre = (arr) => {
   }).map( (num) => {
     return num % 3;
   })
+}
+
+// Refactored code below
+
+const remainsByTre = (arr) => {
+  return arr.filter((nums => typeof nums == "number").map(num => num % 3)
+  
 }
 
 

@@ -27,30 +27,32 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
   Researched answer: Model generator is a Ruby class that creates database records. You can search, update, or delete data from the model
 
-  The Controller generator is a logical command center that coordinates each interaction between the user and the program. 
+  The Controller generator is a logical command center that coordinates each interaction between the user and the program. (View Folder)
 
 
-  The Scaffold generator includes the controller and the model. It is the basic of a rails project and is database migration
+  The Scaffold generator includes the controller and the model. It is the basics of a rails project and is database migration
+
+  The RSPEC tuns test
+
+  The Resource includes the model, controller and view plus migration file
+  
 
 
 4. Consider the Rails routes below. What is the name of the controller method that would be called by each route? What action would each of the controller methods perform?
 
-method="GET"    /students         read - It will display new content       
+method="GET"    /students         index - It will display content from database      
 
-method="POST"   /students         create - It will make new content (send data to server) ex.. request time off.
+method="POST"   /students         create - create instance for new student
 
-method="GET"    /students/new     read - It will display new content 
+method="GET"    /students/new     new - It will display new form for creating new student
 
-method="GET"    /students/2       read - It will display new content
+method="GET"    /students/2       show - It will display new content
 
-method="GET"    /students/2/edit  read - It will display new content  
+method="GET"    /students/2/edit  edit - form for editing student content  
 
-method="PATCH"  /students/2       update - will edit content - if successful a 200 (0k) status code if response is cacheable
+method="PATCH"  /students/2       update - will edit an instance for specific student
 
-method="DELETE" /students/2       delete - remove content - if successful the following will happen
-        - A 202 (Accepted) status code if the action will likely succeed but has not yet been enacted.
-        - A 204 (No Content) status code if the action has been enacted and no further information is to be supplied.
-        - A 200 (OK) status code if the action has been enacted and the response message includes a representation describing the status.
+method="DELETE" /students/2       delete - remove content - if successful the following student will be removed
 
 
 
